@@ -2,16 +2,16 @@ package com.nf.shop;
 
 public class Product {
 
-    private String id;
-    public String productId;
+
+    private String productId;
     private String name;
 
 
     public Product() {
    }
-    public Product( String id,String name) {
+    public Product( String productId,String name) {
         this.name = name;
-        this.id=id;
+        this.productId=productId;
 
     }
 
@@ -19,19 +19,19 @@ public class Product {
         return productId;
     }
     public void setId(String id) {
-        this.id = id;
+        this.productId = productId;
     }
     public String getName() {
         return name;
     }
-   public void setName(String name) {
+    public void setName(String name) {
         this.name = name;
    }
 
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
+                "productId=" + productId+
                 ", name='" + name + '\'' +
                 '}';
     }
