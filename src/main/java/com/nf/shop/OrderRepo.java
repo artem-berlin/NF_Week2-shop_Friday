@@ -2,8 +2,8 @@ package com.nf.shop;
 import java.util.*;
 
 public class OrderRepo {
-   // public String searchedId;
-   String orderId;
+
+    String orderId;
     static List<Order> listOfOrders;
 
     public OrderRepo(List<Order> listOfOrders) {
@@ -15,7 +15,7 @@ public class OrderRepo {
         OrderRepo.listOfOrders = listOfOrders;
     }
 
-    public static List<Order> listOfOrders() {
+    public  List<Order> listOfOrders() {
         return listOfOrders;
     }
 

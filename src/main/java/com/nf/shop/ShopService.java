@@ -2,9 +2,6 @@ package com.nf.shop;
 
 public class ShopService {
 
-
-    private String id;
-    private String name;
     private final ProductRepo productRepo;
     private final OrderRepo orderRepo;
 
@@ -17,19 +14,14 @@ public class ShopService {
     }
 
     public void setId(String id) {
-        this.id = id;
     }
-    public String getId() {
-        return id;
-    }
+
 
 
     @Override
     public String toString() {
         return "ShopService{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", productRepo=" + productRepo +
+                " productRepo=" + productRepo +
                 ", orderRepo=" + orderRepo +
                 '}';
     }
