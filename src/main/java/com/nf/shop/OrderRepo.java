@@ -37,41 +37,10 @@ public class OrderRepo {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
-
-    public Order getOrder(String orderId) {
-        Order result = new Order();
-        for (Order order : listOfOrders) {
-            if (order.itemProductsInOrder().equals(orderId)) {
-                result = order;
-            }
-        }
-        return result;
-
-    }
-
     public void add(Order order){
         listOfOrders.add(order);
     }
 
-
-//    public Map<String,Order> orders = new HashMap<>();
-//
-//    public OrderRepo(List<Order> orders) {
-//
-//    }
-//
-//
-//    public Collection<Order> list() {
-//        return Collections.unmodifiableCollection(orders.values());
-//    }
-//
-//    public Optional<Order> get(String id) {
-//        return Optional.ofNullable(orders.get(id));
-//    }
-//
-//    public void add(Order order) {
-//        orders.put(order.getOrderId(), order);
-//    }
 }
 
 
