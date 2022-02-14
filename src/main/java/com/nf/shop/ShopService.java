@@ -1,22 +1,19 @@
 package com.nf.shop;
 
-import java.util.List;
-import java.util.Optional;
-
 public class ShopService {
 
 
-    String id;
-    String name;
-    ProductRepo productRepo;
-    OrderRepo orderRepo;
+    private String id;
+    private String name;
+    private final ProductRepo productRepo;
+    private final OrderRepo orderRepo;
 
     public ShopService(ProductRepo productRepo, OrderRepo orderRepo) {
         this.productRepo = productRepo;
         this.orderRepo = orderRepo;
     }
-    public Optional<Product> getProduct(String id) throws Exception {
-        return Optional.ofNullable(productRepo.get(id));
+    public void getProduct(String id) throws Exception {
+        productRepo.get(id);
     }
 
     public void setId(String id) {
