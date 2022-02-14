@@ -1,18 +1,19 @@
 package com.nf.shop;
 
 import java.util.List;
+import java.util.Objects;
+
 public class ProductRepo {
     String id;
+    private List<Product> products;
 
-    public String getId() {
+    private String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    private void setId(String id) {
         this.id = id;
     }
-
-    List<Product>products;
 
     public ProductRepo(List<Product> products) {
         this.products = products;
@@ -25,21 +26,21 @@ public class ProductRepo {
     public List<Product> products() {
         return products;
     }
-    public Product get(String id){
-    Product result = new Product();
-            for (Product product : products) {
-                if (product.getId().equals(id))
-                result = product;
 
-            }  return result;
-    }
 
     public void addProduct(Product currentProduct){
        products.add(currentProduct);
   }
-
-
+    public Product get(String id) throws Exception {
+        for (Product product : products) {
+            if (Objects.equals(product.getId(), id)) {
+                return product;
+            }
+        }
+        throw new Exception("Element is not in List!");
     }
+}
+
 
 
 

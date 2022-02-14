@@ -15,7 +15,7 @@ public class ShopService {
         this.productRepo = productRepo;
         this.orderRepo = orderRepo;
     }
-    public Optional<Product> getProduct(String id)  {
+    public Optional<Product> getProduct(String id) throws Exception {
         return Optional.ofNullable(productRepo.get(id));
     }
 
@@ -25,31 +25,6 @@ public class ShopService {
     public String getId() {
         return id;
     }
-    //    public List<Product> products() {
-//        return productRepo.products();
-//    }
-//    public Optional<Order> getOrder(String id){
-//        return Optional.ofNullable(orderRepo.getOrder(id));
-//    }
-//    public String getName() {
-//        return name;
-//    }
-//    public List<Order> listOrders(){
-//        return OrderRepo.listOfOrders();
-//    }
-//
-
-//
-//    public ProductRepo getProductRepo() {
-//        return productRepo;
-//    }
-//
-//    public OrderRepo getOrderRepo() {
-//        return orderRepo;
-//    }
-//    public void addOrder(Order order){
-//        orderRepo.add(order);
-//    }
 
 
     @Override
