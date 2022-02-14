@@ -1,36 +1,64 @@
 package com.nf.shop;
 
+import java.util.List;
+import java.util.Optional;
+
 public class ShopService {
 
-    private OrderRepo myOrders;
-    private ProductRepo myProducts;
 
-    public ShopService() {
-        myOrders = new OrderRepo();
-        myProducts = new ProductRepo();
+    String id;
+    String name;
+    ProductRepo productRepo;
+    OrderRepo orderRepo;
+
+    public ShopService(ProductRepo productRepo, OrderRepo orderRepo) {
+        this.productRepo = productRepo;
+        this.orderRepo = orderRepo;
+    }
+    public Optional<Product> getProduct(String id)  {
+        return Optional.ofNullable(productRepo.get(id));
     }
 
-    public void getProduct(){
-
+    public void setId(String id) {
+        this.id = id;
     }
-
-    public void addProduct(){
-
+    public String getId() {
+        return id;
     }
+    //    public List<Product> products() {
+//        return productRepo.products();
+//    }
+//    public Optional<Order> getOrder(String id){
+//        return Optional.ofNullable(orderRepo.getOrder(id));
+//    }
+//    public String getName() {
+//        return name;
+//    }
+//    public List<Order> listOrders(){
+//        return OrderRepo.listOfOrders();
+//    }
+//
 
-    public void listProducts(){
+//
+//    public ProductRepo getProductRepo() {
+//        return productRepo;
+//    }
+//
+//    public OrderRepo getOrderRepo() {
+//        return orderRepo;
+//    }
+//    public void addOrder(Order order){
+//        orderRepo.add(order);
+//    }
 
-    }
 
-    public void addOrder(){
-
-    }
-
-    public void getOrder(){
-
-    }
-
-    public void listOrders(){
-
+    @Override
+    public String toString() {
+        return "ShopService{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", productRepo=" + productRepo +
+                ", orderRepo=" + orderRepo +
+                '}';
     }
 }
