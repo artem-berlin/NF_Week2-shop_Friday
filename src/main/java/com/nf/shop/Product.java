@@ -18,7 +18,7 @@ public class Product {
     public String getId() {
         return productId;
     }
-    public void setId(String id) {
+    public void setId(String productId) {
         this.productId = productId;
     }
     public String getName() {
